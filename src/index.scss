@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Jacquarda+Bastarda+9&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Jacquarda Bastarda 9", serif;
+  box-sizing: border-box;
+  user-select: none !important;
+}
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg) rotateX(0deg) rotateY(0deg) translateX(0px) translateY(0px);
+  }
+
+  25% {
+    transform: rotate(90deg) rotateX(18deg) rotateY(18deg) translateX(18px) translateY(-18px);
+  }
+
+  50% {
+    transform: rotate(180deg) rotateX(-18deg) rotateY(-18deg) translateX(-18px) translateY(18px);
+  }
+
+  100% {
+    transform: rotate(180deg) rotateX(0deg) rotateY(0deg) translateX(0px) translateY(0px);
+  }
+}
+
+li {
+  list-style: none;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden !important;
+}
+
+body {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1500px;
+  gap: 100px;
+}
+
+.FINAL {
+  font-size: 2rem;
+  color: #000;
+  text-shadow: 0px 0px 10px #000a;
+}
+
+.Box {
+  transform-origin: center center;
+  animation: move 180s 0s infinite linear;
+  background-image: radial-gradient(#313131, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 200px #272727, 0px 0px 100px #000 inset;
+  width: 300px;
+  height: 300px;
+  border-radius: 25%;
+  overflow: hidden;
+  filter: drop-shadow(10px 10px 20px #00000080);
+
+
+  ul {
+    display: flex;
+
+    li {
+      color: #fafafa;
+      text-shadow: 0px 0px 25px #fafafa;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+    }
+
+    &:first-child {
+      li {
+        &:first-child {
+          border-radius: 0 0 50% 0;
+
+          span {
+            transform: rotate(-45deg);
+          }
+        }
+
+        &:nth-child(2) {
+          border-radius: 0 0 50% 50%;
+        }
+
+        &:last-child {
+          border-radius: 0 0 0 50%;
+
+          span {
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      li {
+        &:first-child {
+          border-radius: 0 50% 50% 0;
+
+          span {
+            transform: rotate(-90deg);
+          }
+        }
+
+        &:nth-child(2) {
+          border-radius: 50% 50% 50% 50%;
+        }
+
+        &:last-child {
+          border-radius: 50% 0 0 50%;
+
+          span {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+
+    &:last-child {
+      li {
+
+        &:first-child {
+          border-radius: 0 50% 0 0;
+
+          span {
+            transform: rotate(45deg);
+          }
+        }
+
+        &:nth-child(2) {
+          border-radius: 50% 50% 0 0;
+        }
+
+        &:last-child {
+          border-radius: 50% 0 0 0;
+
+          span {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.Black {
+  background-color: #000;
+  box-shadow: 0 0 10px #000;
+  border-radius: 50%;
+}
